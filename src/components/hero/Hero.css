@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hero-main{
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.hero-text{
+    margin-left: 150px;
+    margin-top: 120px;
+}
+
+.hero-text h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 55px;
+}
+
+.hero-text span{
+    color: rgb(78, 78, 255);
+}
+
+.hero-text p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+}
+
+.hero-image img{
+    height: 700px;
+    width: auto;
+}
+.button{
+    height: 50px;
+    width: 180px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button p{
+    margin-bottom: 13px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight:500 ;
+
+}
+
+.hero-text h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: rgb(39, 39, 39);
+}

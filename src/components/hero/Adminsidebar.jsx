@@ -1,0 +1,69 @@
+import React, { useContext, useState } from 'react'
+import "./Userhomehero.css"
+import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
+import {faCloud, faHome, faSignOut, faTasks , faCheck , faBarcode} from '@fortawesome/free-solid-svg-icons'
+import { authContext } from '../../contexts/Authcontext'
+import Assigntaskmodal from '../Modals/Task/Assigntaskmodal'
+import { useNavigate } from 'react-router'
+const Adminsidebar = () => {
+  const navigate = useNavigate();
+const [TaskModal, setTaskModal] = useState(false);
+
+  const closeTaskModal = ()=>{
+    setTaskModal(false);
+  }
+
+    
+  const {user} = useContext(authContext);
+  return (
+    <>
+    <div className="ush-left">
+            <div className="ush-left-first">
+                <img src="https://media.istockphoto.com/id/517496620/photo/bearded-young-businessman-wearing-white-shirt-working-on-modern-loft.jpg?s=612x612&w=0&k=20&c=YcoL8vFwDJBZotGrPl68PFqJBnPaNMQXlLF-gS5v0q0=" alt="useimage" />
+                <p> Hellow, <span>{user.username}!</span> </p>
+            </div>
+            <div className="ush-left-border"></div>
+
+            <div className="ush-left-buttons">
+                <div className="ush-left-nav">
+                <FontAwesomeIcon icon={faHome} size='lg' color='blue' />
+                <p>Home</p>
+                </div>
+                <div className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faTasks} size='lg' color='black' />
+                <p onClick={()=>{
+                  setTaskModal(true);
+                }}>Assign Weekly Task</p>
+                
+                </div>
+                <div onClick={()=>{
+                  navigate("/Approvetask")
+                }} className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faCheck} size='lg' color='black' />
+                <p>Approve Task Submission</p>
+                </div>
+                <div onClick={()=>{
+                  navigate("/Approve")
+                }} className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faBarcode} size='lg' color='black' />
+                <p>Pro Planet Verification</p>
+                </div>
+               
+                <div className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faCloud} size='lg' color='black' />
+                <p>About Us</p>
+                </div>
+                <div className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faSignOut} size='lg' color='black' />
+                <p>Logout Now</p>
+                </div>
+            </div>
+        </div>
+        {
+                  TaskModal!==false ? <Assigntaskmodal close={closeTaskModal} /> :<p></p>
+                }
+    </>
+  )
+}
+
+export default Adminsidebar

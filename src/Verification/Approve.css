@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.approve-main{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    position: absolute;
+    top: 0;
+}
+
+.approve-main-content{
+    display: flex;
+    
+}
+
+.admin-mid{
+    height: 100vh;
+    width: 650px;
+    background-color: rgb(238, 238, 238) ;
+    border-radius: 10px;
+}
+
+.admin-mid h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: rgb(21, 21, 21);
+}
+
+.approve-list{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.approve-card{
+    margin-top: 15px;
+    height: 250px;
+    width: 290px;
+    background-color: white;
+    background-size: cover;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-image: url("https://www.designcap.com/media/pages/images/home/clipart.svg?v=1602654254");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.applied-image{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+
+}
+
+.approve-card h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(28, 28, 28);
+}
+
+.approve-card p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: rgb(89, 89, 89);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.approve-button{
+    height: 40px;
+    width: 170px;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approve-button p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+

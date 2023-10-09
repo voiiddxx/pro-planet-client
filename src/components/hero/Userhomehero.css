@@ -1,0 +1,325 @@
+.ush-main{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+.ush-left{
+    width: 300px;
+    background-color: white;
+    height : 750px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+
+}
+
+.ush-left-first{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.ush-left-first img{
+    height: 160px;
+    width: 280px;
+    margin-top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.ush-left-first p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    margin-left: -150px;
+}
+
+
+.ush-left-first p span{
+    color: rgb(39, 39, 255);
+}
+
+
+.ush-left-border{
+    height: 1px;
+    width: 280px;
+    background-color: rgb(151, 151, 151);
+    margin-top: 20px;
+}
+
+
+.ush-left-nav{
+    height: 45px;
+    width: 250px;
+    background-color: rgb(224, 224, 224);
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.ush-left-nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.ush-left-nav p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(67, 67, 67);
+    font-weight: 500;
+}
+
+.ush-left-nav-regular{
+    height: 45px;
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.ush-left-nav-regular{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.ush-left-nav-regular p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(67, 67, 67);
+    font-weight: 500;
+}
+
+.ush-right{
+    width:450px ;
+    background-color: white ;
+    margin-right: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+
+}
+
+.ranking-upper{
+    height: 250px;
+    margin: 20px;
+    border-radius: 8px;
+    background-image: url("https://www.designcap.com/media/pages/images/home/clipart.svg?v=1602654254");
+    background-size: cover;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ranking-one{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.ranking-one p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+.ranking-one img{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.box-one{
+    height: 100px;
+    width: 90px;
+    background-color: rgba(255, 192, 203, 0.681);
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.box-one p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+
+
+.ranking-two{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.ranking-two p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+.ranking-two img{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.box-two{
+    height: 150px;
+    width: 90px;
+    background-color: rgba(253, 183, 61, 0.568);
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.box-two p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.ranking-three{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.ranking-three p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+.ranking-three img{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.box-three{
+    height: 70px;
+    width: 90px;
+    background-color: rgba(193, 255, 192, 0.681);
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.box-three p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.ranking-list{
+    background-color: white;
+    height: 400px;
+    margin-top: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.ranking-list::-webkit-scrollbar{
+    display: none;
+}
+
+.list-card{
+    height: 70px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    
+}
+
+
+.heading-ranking{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-top: 50px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.pos{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(31, 31, 31);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.pos p{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.list-card img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.list-card h2{
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.list-card h4{
+    color: red;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 50px;
+    font-size: 12px;
+}
