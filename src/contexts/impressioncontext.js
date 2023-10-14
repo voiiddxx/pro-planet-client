@@ -51,8 +51,6 @@ const ImpressionProvider = ({children})=>{
                 alert("Some error occured")
               }
         } catch (error) {
-            console.log(error);
-        }
     }
     return <impressionContext.Provider value={{likeThePost , postComment}}>{children}</impressionContext.Provider>
 }
