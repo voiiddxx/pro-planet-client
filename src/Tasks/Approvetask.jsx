@@ -3,6 +3,8 @@ import "./Approvetask.css"
 import Usernav from '../components/Nav/Usernav'
 import Adminsidebar from '../components/hero/Adminsidebar'
 import { reponseContext } from '../contexts/Responsecontext'
+import Ranking from '../Ranking/Ranking'
+import { resolvePath } from 'react-router-dom'
 
 const Approvetask = () => {
 
@@ -10,8 +12,10 @@ const Approvetask = () => {
     useEffect(()=>{
         getResponseData();
     } , []);
-    const {Taskresponse} = useContext(reponseContext);
-    console.log(Taskresponse);
+    const {Taskresponse , declineWeeklyResponse} = useContext(reponseContext);
+
+    
+
   return (
     <>
     <div className="approve-task-main-admin">
@@ -43,11 +47,12 @@ const Approvetask = () => {
                             <div className="approve-admin-button">
                                 <div onClick={()=>{
                                     ApproveResponse(curr.user._id , curr.task.task_level , curr._id);
-                                    console.log("userid" , curr.user._id , "level" , curr.task.task_level , "responseid" , curr._id);
                                 }} className="ap-button">
                                     <p>Approve</p>
                                 </div>
-                                <div className="ap-button-reject">
+                                <div onClick={()=>{
+                                    declineWeeklyResponse(curr._id);
+                                }} className="ap-button-reject">
                                     <p>Reject</p>
                                 </div>
                             </div>
@@ -60,7 +65,9 @@ const Approvetask = () => {
                 
                 </div>
             </div>
-            <div className="admin-approve-right"></div>
+            <div className="admin-approve-right">
+                <Ranking/>
+            </div>
         </div>
     </div>
     </>

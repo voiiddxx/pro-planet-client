@@ -21,7 +21,7 @@ const Viewtask = ( {close , tasklevel}) => {
     const {task , submitTaskreponse} = useContext(Taskcontext);
 
     const SubmitForm = async ()=>{
-        alert(responseDetail);
+        close();
         try {
             if(ResponseImage!=null){
                 alert(ResponseImage);
@@ -37,7 +37,7 @@ const Viewtask = ( {close , tasklevel}) => {
                     submitTaskreponse(user, task , response.data.url , responseDetail);
 
 
-                    alert("Image Uploaded");
+                    alert("Task Submitted");
                 });
                }
                else{

@@ -8,14 +8,15 @@
 
 .task-main-content{
     display: flex;
+
+    justify-content: space-around;
 }
 
 .mid-main{
     height: 100vh;
-    width: 700px;
+    width: 650px;
     background-color: white;
     margin-top: 15px;
-    margin-left: 20px;
     border-radius: 8px;
 }
 
@@ -23,7 +24,8 @@
 .task-mid h1{
     padding-top: 20px;
     margin-left: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     font-size: 20px;
     
 }

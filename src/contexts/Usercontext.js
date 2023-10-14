@@ -34,7 +34,12 @@ const UserProvider = ({children})=>{
                 }
               }
             const response = await axios.post("https://pro-planet-server.onrender.com/post" , bodyParameter ,axiosconfig);
-            console.log(response.data);
+            if(response.status===200){
+              window.location.reload();
+            }
+            else{
+              alert("Some Error");
+            }
         } catch (error) {
             console.log(error);
         }
@@ -107,7 +112,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-              const response = await axios.get("https://pro-planet-server.onrender.com/get-user-post" , axiosconfig);
+              const response = await axios.get("https://pro-planet-server.onrender.comz/get-user-post" , axiosconfig);
               dispatch({type:"SET_USER_POST_DATA" ,payload:response.data});
 
         } catch (error) {
@@ -131,7 +136,11 @@ const UserProvider = ({children})=>{
               const bodyPara = {
                 userprofile:userprofile
               }
-              const response = await axios.patch("https://pro-planet-server.onrender.com/update-profile" , bodyPara , axiosconfig );
+              const response = await axios.patch("https://pro-planet-server.onrender.com/update-profile" , bodyPara , axiosconfig);
+              if(response.status===200){
+                window.location.reload();
+              }
+              
 
         } catch (error) {
             console.log(error);

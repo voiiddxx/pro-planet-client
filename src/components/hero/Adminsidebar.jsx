@@ -19,13 +19,15 @@ const [TaskModal, setTaskModal] = useState(false);
     <>
     <div className="ush-left">
             <div className="ush-left-first">
-                <img src="https://media.istockphoto.com/id/517496620/photo/bearded-young-businessman-wearing-white-shirt-working-on-modern-loft.jpg?s=612x612&w=0&k=20&c=YcoL8vFwDJBZotGrPl68PFqJBnPaNMQXlLF-gS5v0q0=" alt="useimage" />
+                <img src= {user.userprofile} alt="useimage" />
                 <p> Hellow, <span>{user.username}!</span> </p>
             </div>
             <div className="ush-left-border"></div>
 
             <div className="ush-left-buttons">
-                <div className="ush-left-nav">
+                <div onClick={()=>{
+                  navigate("/Adminhome")
+                }} className="ush-left-nav">
                 <FontAwesomeIcon icon={faHome} size='lg' color='blue' />
                 <p>Home</p>
                 </div>

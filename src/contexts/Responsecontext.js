@@ -57,7 +57,62 @@ const ResponseProvider = ({children})=>{
             console.log(error);
         }
     }
-    return <reponseContext.Provider value={{...state , getResponseData , ApproveResponse}}>{children}</reponseContext.Provider>
+
+
+    // DECLINE WEEKLY TASK RESPONSE 
+    const declineWeeklyResponse = async (submitid) =>{
+        try {
+            const token = localStorage.getItem("x-auth-token");
+            const axiosconfig = {
+                headers:{
+                  "Accept":"application/json",
+                  "x-auth-token":token
+                }
+              }
+              const bodyPara = {
+                submitid:submitid
+              }
+
+              const response = await axios.post("http://localhost:5000/decline-req" , bodyPara , axiosconfig);
+              if(response.status===200){
+                alert("Task Declined")
+              } else{
+                alert("Some Error Occured");
+              }
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    // DECLINE PRO PLANET VERIFY REQ
+
+    const declineProplanetreq = async (id , postid)=>{
+      try {
+        const bodyPara ={
+          id:id,
+          postid:postid
+        }
+        const token = localStorage.getItem("x-auth-token");
+            const axiosconfig = {
+                headers:{
+                  "Accept":"application/json",
+                  "x-auth-token":token
+                }
+              }
+
+              const response = await axios.post("http://localhost:5000/decline-pro-planet-req" , bodyPara , axiosconfig);
+              if(response.status===200){
+                alert("Workerd Fine");
+              }else{
+                alert("Some Error occured");
+              }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    return <reponseContext.Provider value={{...state , getResponseData , ApproveResponse, declineWeeklyResponse , declineProplanetreq}}>{children}</reponseContext.Provider>
 }
 
 export {ResponseProvider , reponseContext};

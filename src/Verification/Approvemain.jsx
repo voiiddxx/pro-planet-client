@@ -6,10 +6,12 @@ import {useLocation} from 'react-router-dom';
 import "../components/Verifyquestion/Ques.css"
 import axios from 'axios';
 import { VerifyContext } from '../contexts/reducers/Verifycontext';
+import { reponseContext } from '../contexts/Responsecontext';
 
 const Approvemain = () => {
   const location = useLocation();
   const [UserQuestions, setUserQuestions] = useState([]);
+  const {declineProplanetreq} = useContext(reponseContext);
 
   //  APECIFIC USER CONTEXT
    const specificUser = async ()=>{
@@ -76,7 +78,10 @@ const {ApprovaltoProPlanetverification}= useContext(VerifyContext);
                     alert("its Working")
                   }}>Approve</p>
               </div>
-              <div className="button-two">
+              <div onClick={()=>{
+                console.log(location.state.userData._id , " " , curr._id);
+                declineProplanetreq(location.state.userData._id , curr._id);
+              }} className="button-two">
                   <p>Decline</p>
               </div>
           </div>

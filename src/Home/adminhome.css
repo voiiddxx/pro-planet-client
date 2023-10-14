@@ -13,14 +13,8 @@
 
 .admin-main-content{
     display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
 }
 
 
-.admin-mid{
-    height: 100vh;
-    width: 650px;
-    background-color: white;
-    margin-top: 15px;
-    margin-left: 80px;
-    border-radius: 5px;
-}
