@@ -1,5 +1,6 @@
-import axios from "axios";
 import { createContext } from "react";
+import axios from "axios";
+
 
 const impressionContext = createContext();
 
@@ -51,6 +52,7 @@ const ImpressionProvider = ({children})=>{
                 alert("Some error occured")
               }
         } catch (error) {
+        }
     }
     return <impressionContext.Provider value={{likeThePost , postComment}}>{children}</impressionContext.Provider>
 }
