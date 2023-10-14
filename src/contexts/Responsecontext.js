@@ -73,7 +73,7 @@ const ResponseProvider = ({children})=>{
                 submitid:submitid
               }
 
-              const response = await axios.post("http://localhost:5000/decline-req" , bodyPara , axiosconfig);
+              const response = await axios.post("https://pro-planet-server.onrender.com/decline-req" , bodyPara , axiosconfig);
               if(response.status===200){
                 alert("Task Declined")
               } else{
@@ -102,7 +102,7 @@ const ResponseProvider = ({children})=>{
                 }
               }
 
-              const response = await axios.post("http://localhost:5000/decline-pro-planet-req" , bodyPara , axiosconfig);
+              const response = await axios.post("https://pro-planet-server.onrender.com/decline-pro-planet-req" , bodyPara , axiosconfig);
               if(response.status===200){
                 alert("Workerd Fine");
               }else{
