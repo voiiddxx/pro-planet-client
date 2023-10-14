@@ -17,7 +17,7 @@ const ImpressionProvider = ({children})=>{
               const bodyParameter = {
                 postid:postid,
               }
-            const response = await axios.post("http://localhost:5000/like-user-post" , bodyParameter , axiosconfig );
+            const response = await axios.post("https://pro-planet-server.onrender.com/like-user-post" , bodyParameter , axiosconfig );
             if(response.status===200){
                 alert("Post Liked")
             }else{
@@ -43,7 +43,7 @@ const ImpressionProvider = ({children})=>{
                 postid:postid
               }
 
-              const response = await axios.post("http://localhost:5000/post-comment-user-post" , bodyParameter , axiosconfig);
+              const response = await axios.post("https://pro-planet-server.onrender.com/post-comment-user-post" , bodyParameter , axiosconfig);
               if(response.status ===200){
                 alert("Comment Posted")
               }
