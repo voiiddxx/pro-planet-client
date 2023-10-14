@@ -1,7 +1,7 @@
 .ush-main{
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 10px;
 
 }
 
@@ -23,8 +23,8 @@
 
 .ush-left-first{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
 }
 
@@ -41,9 +41,9 @@
 .ush-left-first p{
     margin-top: 20px;
     font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    margin-left: -150px;
+   
 }
 
 
@@ -63,9 +63,14 @@
 .ush-left-nav{
     height: 45px;
     width: 250px;
-    background-color: rgb(224, 224, 224);
+    cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+.ush-left-nav:hover{
+    background-color: rgb(224, 224, 224);
+    
 }
 
 .ush-left-nav{
@@ -77,7 +82,7 @@
 }
 
 .ush-left-nav p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: rgb(67, 67, 67);
     font-weight: 500;
 }
@@ -87,6 +92,11 @@
     width: 250px;
     margin-top: 20px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.ush-left-nav-regular:hover{
+     background-color: rgb(224, 224, 224);;
 }
 
 .ush-left-nav-regular{
@@ -98,27 +108,28 @@
 }
 
 .ush-left-nav-regular p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: rgb(67, 67, 67);
     font-weight: 500;
 }
 
 .ush-right{
     width:450px ;
-    background-color: white ;
+    margin-top: 5px;
     margin-right: 20px;
-    margin-top: 15px;
     border-radius: 10px;
+   
 
 }
 
 .ranking-upper{
+    
     height: 250px;
-    margin: 20px;
+    background-image: url(../../Ranking//ranking.svg);
+    object-fit: cover;
+    overflow: hidden;
     border-radius: 8px;
-    background-image: url("https://www.designcap.com/media/pages/images/home/clipart.svg?v=1602654254");
-    background-size: cover;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   background-color: rebeccapurple;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,8 +146,9 @@
 
 
 .ranking-one p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
     font-size: 15px;
 }
 .ranking-one img{
@@ -148,11 +160,11 @@
 }
 
 .box-one{
-    height: 100px;
+    height: 120px;
     width: 90px;
-    background-color: rgba(255, 192, 203, 0.681);
-    border-top-right-radius: 20px;
-    border-top-left-radius:20px;
+    background-color: rgba(61, 246, 169, 0.903);
+    border-top-right-radius: 100px;
+    border-top-left-radius:100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -160,7 +172,7 @@
 }
 
 .box-one p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: black;
     font-size: 11px;
     font-weight: 500;
@@ -179,9 +191,10 @@
 
 
 .ranking-two p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 .ranking-two img{
     margin-top: 10px;
@@ -194,16 +207,16 @@
 .box-two{
     height: 150px;
     width: 90px;
-    background-color: rgba(253, 183, 61, 0.568);
-    border-top-right-radius: 20px;
-    border-top-left-radius:20px ;
+    background-color: rgba(253, 61, 61, 0.979);
+    border-top-right-radius: 100px;
+    border-top-left-radius:100px ;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
 .box-two p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: black;
     font-size: 13px;
     font-weight: 500;
@@ -219,9 +232,10 @@
 
 
 .ranking-three p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 .ranking-three img{
     margin-top: 10px;
@@ -232,19 +246,19 @@
 }
 
 .box-three{
-    height: 70px;
+    height: 90px;
     width: 90px;
-    background-color: rgba(193, 255, 192, 0.681);
-    border-top-right-radius: 20px;
-    border-top-left-radius:20px ;
+    background-color: rgb(109, 104, 243);
+    border-top-right-radius: 100px;
+    border-top-left-radius:100px ;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
 .box-three p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
+    font-family: 'Poppins', sans-serif;
+    color: white;
     font-size: 10px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -257,6 +271,7 @@
     margin-top: 15px;
     overflow: hidden;
     overflow-y: scroll;
+    border-radius: 10px;
 }
 
 .ranking-list::-webkit-scrollbar{
@@ -276,10 +291,10 @@
 
 
 .heading-ranking{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     margin-top: 50px;
-    font-weight: 500;
+    font-weight: 400;
     margin-left: 20px;
 }
 
@@ -296,7 +311,7 @@
 
 .pos p{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 15px;
 }
@@ -310,16 +325,18 @@
 }
 
 .list-card h2{
-    color: blue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(84, 84, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     font-size: 15px;
     margin-left: 15px;
+    font-family: 400;
 }
 
 .list-card h4{
-    color: red;
-    font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 44, 44);
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
     margin-left: 50px;
     font-size: 12px;
 }

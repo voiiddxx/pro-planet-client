@@ -9,33 +9,23 @@ import { userContext } from '../../../contexts/Usercontext'
 const Addpost = ({close}) => {
     const {AddPostNow} = useContext(userContext);
 
-
-    const AddpostNow = (title , postimage)=>{
-        AddPostNow(title , postimage);
-    }
-
     const [Image, setImage] = useState(null);
     const [Caption, setCaption] = useState("");
-    let files = [];
     const [UploadImage, setUploadImage] = useState(null);
     const HanldeImage = ()=>{
+        close();
        if(Image!=null){
-        alert(Image);
-        console.log(Image[0]);
         let formdata = new FormData();
         formdata.append("file" , Image[0]);
         formdata.append("upload_preset" , "qouutdij");
         axios.post("https://api.cloudinary.com/v1_1/dwkmxsthr/upload" , formdata , {
             onDownloadProgress:(ProgressEvent)=>{
-                
               console.log("Uploading..." ,Math.round( ProgressEvent.loaded/ProgressEvent.total));
             }
         }).then(response=>{
-            console.log(response.data.url);
-            files.push(response.data.url);
-            setUploadImage(files);
-            alert("Image Uploaded");
             AddPostNow(Caption , response.data.url);
+            
+            alert("Post Added Successfully");
         });
        }
        else{

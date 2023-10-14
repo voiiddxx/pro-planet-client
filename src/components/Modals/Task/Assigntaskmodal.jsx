@@ -14,7 +14,8 @@ const Assigntaskmodal = ({close}) => {
   const [taskrefImage, settaskrefImage] = useState(null);
   const [tasklevel, settasklevel] = useState("easy");
   const handleAssignTask = async()=>{
-    alert("working");
+    close();
+    alert("Uploading Task Plaese Wait");
     if(taskrefImage!=null){
       let formdata = new FormData();
       formdata.append("file" , taskrefImage[0]);

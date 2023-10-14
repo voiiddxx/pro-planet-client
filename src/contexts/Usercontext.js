@@ -9,7 +9,9 @@ const initialState ={
     isPostLoading:false,
     isPostError:false,
     posts:[],
-    userpost:[]
+    userpost:[],
+    otheruser:[],
+    otherpost:[]
 }
 
 const UserProvider = ({children})=>{
@@ -68,7 +70,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-            const response = await axios.get("https://pro-planet-server.onrender.com/get-specific-user?username="+username , axiosconfig );
+            const response = await axios.get("http://localhost:5000/get-specific-user?username="+username , axiosconfig );
             console.log(response.data);
             dispatch({type:"SPECIFIC_SET_DATA" , payload:response.data});
 
@@ -76,6 +78,24 @@ const UserProvider = ({children})=>{
             console.log(error);
         }
     }
+
+    // GET OTHER USER POST
+     const getOtheruserpost = async (username)=>{
+        try {
+            const token = localStorage.getItem("x-auth-token");
+            const axiosconfig = {
+                headers:{
+                  "Accept":"application/json",
+                  "x-auth-token":token
+                }
+              }
+            const response = await axios.get("http://localhost:5000/specific-user-post?username="+username , axiosconfig );
+            dispatch({type:"SPECIFIC_SET_DATA_POST" , payload:response.data});
+
+        } catch (error) {
+            console.log(error);
+        }
+     }
 
 
     const gettinSepcificUserPost =  async()=>{
@@ -87,7 +107,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-              const response = await axios.get("https://pro-planet-server.onrender.com/get-user-post" , axiosconfig);
+              const response = await axios.get("http://localhost:5000/get-user-post" , axiosconfig);
               dispatch({type:"SET_USER_POST_DATA" ,payload:response.data});
 
         } catch (error) {
@@ -124,7 +144,7 @@ const UserProvider = ({children})=>{
 
 
     
-    return <userContext.Provider value={{...state, AddPostNow , GettingallPost , gettinSepcificUserPost , specificUser , updateImage}}>{children}</userContext.Provider>
+    return <userContext.Provider value={{...state, AddPostNow , GettingallPost , gettinSepcificUserPost , specificUser , updateImage , getOtheruserpost}}>{children}</userContext.Provider>
 }
 
 export {userContext , UserProvider};

@@ -35,6 +35,8 @@ const AuthProvider = ({children})=>{
             }
             const response = await axios.post("https://pro-planet-server.onrender.com/register" , bodyPara , axiosheader);
             console.log(response.data);
+
+            return response.status;
         
         } catch (err) {
            console.log(err); 

@@ -36,7 +36,6 @@ const Start = () => {
   }
 
   useEffect(()=>{
-    alert("working all good");
     checkingUserPresentorNot();
     
   } , []);

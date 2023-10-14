@@ -2,13 +2,21 @@ import React, { useContext, useState } from 'react'
 import "./Register.css"
 import earthimage from "./earth.png"
 import { authContext } from '../contexts/Authcontext'
+import { useNavigate } from 'react-router'
 const Register = () => {
+  const navigate = useNavigate();
   const {Register} = useContext(authContext);
   
   const handleSubmit =async (e)=>{
     e.preventDefault();
-    await Register(username , email , password);
-    alert("workimg")
+    const data = await Register(username , email , password);
+    if(data === 200){
+      navigate("/Login");
+    }
+    else{
+      alert("Please Try With Another email address or username");
+    }
+    
 
   }
 

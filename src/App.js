@@ -11,6 +11,7 @@ import Approvemain from './Verification/Approvemain'
 import Task from './Tasks/Task'
 import Approvetask from './Tasks/Approvetask'
 import Profile from './Profile/Profile'
+import Otheruser from './Profile/Otheruser'
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/Task' element={<Task/>}/>
         <Route path='/Approvetask' element={<Approvetask/>}/>
         <Route path='/Profile' element={<Profile/>}/>
+        <Route path='/Otheruser' element={<Otheruser/>}/>
       </Routes>
     </Router>
   )

@@ -18,6 +18,19 @@ const postReducer = (state , action)=>{
                     isLoading:false,
                     userpost:action.payload
                 }
+            case "SPECIFIC_SET_DATA_POST":
+                return {
+                    ...state,
+                    isLoading:false,
+                    otherpost:action.payload
+                }
+       
+            case "SPECIFIC_SET_DATA":
+                return {
+                    ...state,
+                    isLoading:false,
+                    otheruser:action.payload
+                }
        
             
         case "POST_API_ERROR":

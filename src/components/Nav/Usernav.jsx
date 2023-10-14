@@ -4,9 +4,10 @@ import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
 import { faSquarePlus  } from '@fortawesome/free-regular-svg-icons'
 import { faRightFromBracket, faTree } from '@fortawesome/free-solid-svg-icons'
 import Addpost from '../Modals/Addpost/Addpost';
+import { useNavigate } from 'react-router'
 const Usernav = () => {
   
-
+const navigate = useNavigate();
   const [OpenAddpostModal, setOpenAddpostModal] = useState(false);
 
   const CloseModal = ()=>{
@@ -30,7 +31,10 @@ const Usernav = () => {
       <div className="nav-button">
       <FontAwesomeIcon icon={faTree} size='lg' color='#212121;' />
       </div>
-      <div className="nav-button">
+      <div onClick={()=>{
+         localStorage.removeItem("x-auth-token");
+         navigate("/Login");
+      }} className="nav-button">
       <FontAwesomeIcon icon={faRightFromBracket} size='lg' color='#212121;' />
       </div>
       </div>

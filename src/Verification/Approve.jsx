@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router'
 
 const Approve = () => {
   const {applieduser} = useContext(VerifyContext);
-  console.log("this is " , applieduser[0].username);
   const navigate = useNavigate();
   
   return (
@@ -34,7 +33,7 @@ const Approve = () => {
                 <p>Explore</p>
               </div>
             </div>
-            }) :<p>There is no any Applied user</p>
+            }) : <h1>There is No any other user</h1>
           }
         
           
@@ -43,7 +42,7 @@ const Approve = () => {
         </div>
           </div>
           <div className="admin-right">
-
+          
           </div>
         </div>
     </div>

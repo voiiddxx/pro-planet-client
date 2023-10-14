@@ -7,6 +7,7 @@ import { authContext } from '../../contexts/Authcontext'
 import { useNavigate } from 'react-router'
 import { userContext } from '../../contexts/Usercontext'
 import axios from 'axios'
+import Verifymodal from '../Modals/Verify/Verifymodal'
 
 const Sidebar = () => {
     
@@ -14,6 +15,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const [imagetoupdate, setimagetoupdate] = useState(null);
   const {updateImage} = useContext(userContext);
+
+  const [VerifyMoadlselect, setVerifyMoadlselect] = useState(false);
   
 
 
@@ -21,24 +24,28 @@ const Sidebar = () => {
 
   const handleimage = ()=>{
     if(imagetoupdate!=null){
-      alert(imagetoupdate);
       let formdata = new FormData();
       formdata.append("file" , imagetoupdate[0]);
       formdata.append("upload_preset" , "qouutdij");
       axios.post("https://api.cloudinary.com/v1_1/dwkmxsthr/upload" , formdata , {
           onDownloadProgress:(ProgressEvent)=>{
-              
             console.log("Uploading..." ,Math.round( ProgressEvent.loaded/ProgressEvent.total));
           }
       }).then(response=>{
           console.log(response.data.url);
-          alert("Image Uploaded");
           updateImage(response.data.url);
+          alert("Image Uploaded");
+          setImageModal(false);
       });
      }
      else{
       alert("Please Select Image");
      }
+  }
+
+
+  const closemodal = ()=>{
+    setVerifyMoadlselect(false);
   }
 
   return (
@@ -49,7 +56,7 @@ const Sidebar = () => {
                   setImageModal(true);
                  
                 }} src= {user?.userprofile} alt="useimage" />
-                <p> hellow, <span>{user.username}!</span> </p>
+                <p> Hellow, <span>{user.username}!</span> </p>
             </div>
             <div className="ush-left-border"></div>
 
@@ -60,31 +67,33 @@ const Sidebar = () => {
                 <FontAwesomeIcon icon={faHome} size='lg' color='blue' />
                 <p>Home</p>
                 </div>
-                <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faRankingStar} size='lg' color='black' />
-                <p>Pro Planet Ranking</p>
-                </div>
+               
                 <div onClick={()=>{
                   navigate("/Profile")
                 }} className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faUser} size='lg' color='black' />
+                <FontAwesomeIcon icon={faUser} size='lg' color='orange' />
                 <p>Profile</p>
                 </div>
                 <div onClick={()=>{
                   navigate("/Task")
                 }} className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faTasks} size='lg' color='black' />
+                <FontAwesomeIcon icon={faTasks} size='lg' color='red' />
                 <p>Weekly Tasks</p>
                 </div>
-                <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faIdBadge} size='lg' color='black' />
+                <div onClick={()=>{
+                  setVerifyMoadlselect(true);
+                }} className="ush-left-nav-regular">
+                <FontAwesomeIcon icon={faIdBadge} size='lg' color='green' />
                 <p>Pro Person verification</p>
                 </div>
                 <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faCloud} size='lg' color='black' />
+                <FontAwesomeIcon icon={faCloud} size='lg' color='violet' />
                 <p>About Us</p>
                 </div>
-                <div className="ush-left-nav-regular">
+                <div onClick={()=>{
+                  localStorage.removeItem("x-auth-token");
+                  navigate("/Login");
+                }} className="ush-left-nav-regular">
                 <FontAwesomeIcon icon={faSignOut} size='lg' color='black' />
                 <p>Logout Now</p>
                 </div>
@@ -102,9 +111,12 @@ const Sidebar = () => {
               <div onClick={()=>{
                 document.querySelector(".image-upload-input").click();
               }} className="image-input">
-                <p>Select Image 📸</p>
+                {
+                  imagetoupdate!=null ? <p>Image Selected Successfully📸</p> : <p>Select Image 📸</p>
+                }
               </div>
               <div onClick={handleimage} className="image-button-upload">
+              
                 <p>Update</p>
               </div>
               <div onClick={()=>{
@@ -115,6 +127,9 @@ const Sidebar = () => {
               
             </div>
           </div> : <div></div>
+        }
+        {
+          VerifyMoadlselect!==false ? <Verifymodal close={closemodal}/> : <div></div>
         }
     </>
   )

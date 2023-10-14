@@ -28,7 +28,7 @@
 }
 
 .addpost h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     margin-left: 15px;
     margin-top: 20px;
@@ -63,7 +63,7 @@
 }
 
 .addimage p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 15px;
     color: rgb(25, 25, 25);
@@ -90,6 +90,6 @@
 }
 
 .upload-button1 p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white    ;
 }

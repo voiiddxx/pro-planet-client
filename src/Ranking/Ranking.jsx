@@ -6,7 +6,6 @@ const Ranking = () => {
     
     const {ranking , isLoading} = useContext(rankingContext);
     
-    console.log("this i s" , ranking[0]);
     if(isLoading){
       return <p>Loading Ranking Data</p>
     }

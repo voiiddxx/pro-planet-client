@@ -8,8 +8,7 @@ const Verifymodal = ({close}) => {
     const {proPlanetverification} = useContext(authContext);
     const [question, setquestion] = useState("");
     const [Image, setImage] = useState(null)
-    const [UploadImage, setUploadImage] = useState(null);
-    let files = [];
+    
 
     //=====UPLOADING IMAGE ON CLOUDINARY AND GETTING THE IMAGE URL====//
     const handleImage = ()=>{
@@ -26,8 +25,7 @@ const Verifymodal = ({close}) => {
             }
         }).then(response=>{
             console.log(response.data.url);
-            files.push(response.data.url);
-            setUploadImage(files);
+            proPlanetverification(question , response.data.url);
             alert("Image Uploaded");
 
         })
@@ -43,10 +41,7 @@ const Verifymodal = ({close}) => {
         }
 
 
-        const UploadinOnServer = ()=>{
-            proPlanetverification(question , UploadImage[0]);
-
-        }
+      
     
   return (
     <>
@@ -79,7 +74,7 @@ const Verifymodal = ({close}) => {
                     <p onClick={()=>{
                         VerifyNow();
                     }} >Upload</p>
-                    <p onClick={UploadinOnServer} >Post Now</p>
+                   
                 </div>
                 <div className="result-border"></div>
             </div>
@@ -101,7 +96,7 @@ const Verifymodal = ({close}) => {
                         document.querySelector(".image-ques2").click()
                     }}>Select Image</p>
                     <p onClick={VerifyNow}>Upload</p>
-                    <p onClick={UploadinOnServer}>Post Now</p>
+                 
                 </div>
                 <div className="result-border"></div>
             </div>
@@ -123,7 +118,6 @@ const Verifymodal = ({close}) => {
                         document.querySelector(".ques3").click()
                     }} >Select Image</p>
                     <p onClick={VerifyNow}>Upload</p>
-                    <p onClick={UploadinOnServer}>Post Now</p>
                 </div>
                 <div className="result-border"></div>
             </div>
@@ -144,7 +138,6 @@ const Verifymodal = ({close}) => {
                         document.querySelector(".ques4").click()
                     }} >Select Image</p>
                     <p onClick={VerifyNow} >Upload</p>
-                    <p onClick={UploadinOnServer}>Post Now</p>
                 </div>
                 <div className="result-border"></div>
             </div>
@@ -163,14 +156,11 @@ const Verifymodal = ({close}) => {
                         document.querySelector(".ques5").click()
                     }}>Select Image</p>
                     <p onClick={VerifyNow}>Upload</p>
-                    <p onClick={UploadinOnServer}>Post Now</p>
                 </div>
                 <div className="result-border"></div>
             </div>
 
-            <div className="apply-button">
-                <p>Apply for Verification💡 </p>
-            </div>
+           
         </div>
     </>
   )

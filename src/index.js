@@ -7,6 +7,7 @@ import { TaskProvider } from './contexts/Taskcontext';
 import { VerifyProvider } from './contexts/reducers/Verifycontext';
 import { ResponseProvider } from './contexts/Responsecontext';
 import { RankingProvider } from './contexts/rankingcontext';
+import { ImpressionProvider } from './contexts/impressioncontext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,9 @@ root.render(
                 <VerifyProvider>
                     <ResponseProvider>
                         <RankingProvider>
+                            <ImpressionProvider>
                 <App />
+                </ImpressionProvider>
                 </RankingProvider>
                 </ResponseProvider>
                 </VerifyProvider>

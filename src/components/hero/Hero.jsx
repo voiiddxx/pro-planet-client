@@ -5,13 +5,16 @@ import { authContext } from '../../contexts/Authcontext';
 import { useNavigate } from 'react-router'
 
 const Hero = () => {
-  const {user} = useContext(authContext);
+  const {isLoading , user} = useContext(authContext);
   const navigate = useNavigate();
-  
+    if(isLoading){
+      return <h1>Working</h1>
+    }
+    else{
   return (
     <div className="hero-main">
         <div className="hero-text">
-            <h2>Hey {user.username}🖐️</h2>
+            <h2>Hey {user?.username}🖐️</h2>
             <h1>Be a Pro Planet Person And Help to Save <span> The Earth 🌍  </span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, possimus repellendus, unde quibusdam ipsam sed ullam eligendi minus cupiditate provident in iure molestiae ratione cumque! Magnam ea odit explicabo, necessitatibus id eum consequuntur laborum delectus.</p>
            <div className="button">
@@ -25,6 +28,7 @@ const Hero = () => {
         </div>
     </div>
   )
+    }
 }
 
 export default Hero

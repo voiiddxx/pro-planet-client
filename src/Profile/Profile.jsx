@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import "./Profile.css"
 import Usernav from '../components/Nav/Usernav'
 import Sidebar from '../components/hero/Sidebar';
@@ -34,11 +34,11 @@ const Profile = () => {
           <div className="profile-cards-uppr">
           <div className="rating-container">
             <p>Followers:  
-              {user?.follower.length}
+              {user?.follower?.length}
             </p>
           </div>
           <div className="rating-container">
-            <p>Following : {user?.following.length}</p>
+            <p>Following : {user?.following?.length}</p>
           </div>
           </div>
         </div>

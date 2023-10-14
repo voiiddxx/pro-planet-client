@@ -6,6 +6,7 @@ import easy from "./easy.svg"
 import medium from "./medium.svg"
 import hard from "./hard.svg"
 import Viewtask from '../components/Modals/Task/Viewtask'
+import Ranking from '../Ranking/Ranking'
 
 const Task = () => {
     const [tasklevel, settasklevel] = useState("");
@@ -44,7 +45,9 @@ const Task = () => {
                         }}  className='hard' src={hard} alt="hardimage" />
                 </div>
             </div>
-            <div className="task-right"></div>
+            <div className="task-right">
+                <Ranking/>
+            </div>
         </div>
         {
         opanViewTaskModal!==false ? <Viewtask tasklevel={tasklevel} close={closeOpentaskmodel}/> : <p></p>

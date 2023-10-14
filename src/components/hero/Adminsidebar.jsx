@@ -30,7 +30,7 @@ const [TaskModal, setTaskModal] = useState(false);
                 <p>Home</p>
                 </div>
                 <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faTasks} size='lg' color='black' />
+                <FontAwesomeIcon icon={faTasks} size='lg' color='red' />
                 <p onClick={()=>{
                   setTaskModal(true);
                 }}>Assign Weekly Task</p>
@@ -39,22 +39,22 @@ const [TaskModal, setTaskModal] = useState(false);
                 <div onClick={()=>{
                   navigate("/Approvetask")
                 }} className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faCheck} size='lg' color='black' />
+                <FontAwesomeIcon icon={faCheck} size='lg' color='green' />
                 <p>Approve Task Submission</p>
                 </div>
                 <div onClick={()=>{
                   navigate("/Approve")
                 }} className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faBarcode} size='lg' color='black' />
+                <FontAwesomeIcon icon={faBarcode} size='lg' color='orange' />
                 <p>Pro Planet Verification</p>
                 </div>
                
                 <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faCloud} size='lg' color='black' />
+                <FontAwesomeIcon icon={faCloud} size='lg' color='violet' />
                 <p>About Us</p>
                 </div>
                 <div className="ush-left-nav-regular">
-                <FontAwesomeIcon icon={faSignOut} size='lg' color='black' />
+                <FontAwesomeIcon icon={faSignOut} size='lg' color='indigo' />
                 <p>Logout Now</p>
                 </div>
             </div>

@@ -28,7 +28,9 @@
 }
 
 .verify-main h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    font-weight: 500;
     margin-top: 1%;
     margin-left: 15px;
     font-size: 20px;
@@ -37,7 +39,7 @@
 .verify-main p{
     margin-left: 15px;
     margin-top:10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 400;
 
@@ -51,7 +53,7 @@
 .question{
     margin-top: 25px;
     margin-left: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .question h2{
@@ -108,7 +110,7 @@
 }
 
 .apply-button p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: white;
 }
