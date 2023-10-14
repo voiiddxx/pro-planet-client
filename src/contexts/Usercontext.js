@@ -70,7 +70,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-            const response = await axios.get("http://localhost:5000/get-specific-user?username="+username , axiosconfig );
+            const response = await axios.get("https://pro-planet-server.onrender.com/get-specific-user?username="+username , axiosconfig );
             console.log(response.data);
             dispatch({type:"SPECIFIC_SET_DATA" , payload:response.data});
 
@@ -89,7 +89,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-            const response = await axios.get("http://localhost:5000/specific-user-post?username="+username , axiosconfig );
+            const response = await axios.get("https://pro-planet-server.onrender.com/specific-user-post?username="+username , axiosconfig );
             dispatch({type:"SPECIFIC_SET_DATA_POST" , payload:response.data});
 
         } catch (error) {
@@ -107,7 +107,7 @@ const UserProvider = ({children})=>{
                   "x-auth-token":token
                 }
               }
-              const response = await axios.get("http://localhost:5000/get-user-post" , axiosconfig);
+              const response = await axios.get("https://pro-planet-server.onrender.com/get-user-post" , axiosconfig);
               dispatch({type:"SET_USER_POST_DATA" ,payload:response.data});
 
         } catch (error) {
