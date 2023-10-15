@@ -5,12 +5,19 @@ import { authContext } from '../../contexts/Authcontext';
 import { useNavigate } from 'react-router'
 
 const Hero = () => {
+
+
   const {isLoading , user} = useContext(authContext);
   const navigate = useNavigate();
+ 
     if(isLoading){
-      return <h1>Working</h1>
+      return <div className="loading">
+        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/loading-2872701-2409417.png" alt="loading" />
+        <p>Loading Please Wait!</p>
+      </div>
     }
     else{
+      
   return (
     <div className="hero-main">
         <div className="hero-text">

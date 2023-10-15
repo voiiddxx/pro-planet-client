@@ -14,17 +14,21 @@
 .approve-main-content{
     display: flex;
     
+    
 }
 
 .admin-mid{
     height: 100vh;
-    width: 650px;
+    width: 100%;
     background-color: rgb(238, 238, 238) ;
     border-radius: 10px;
+    margin-left: 30px;
+    
 }
 
 .admin-mid h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     font-size: 20px;
     margin-top: 20px;
     margin-left: 15px;
@@ -35,12 +39,12 @@
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .approve-card{
     margin-top: 15px;
-    height: 250px;
-    width: 290px;
+    height: 350px;
+    min-width: 300px;
     background-color: white;
     background-size: cover;
     margin-left: 15px;
@@ -58,17 +62,19 @@
 .applied-image{
     height: 100px;
     width: 100px;
+    object-fit: cover;
     border-radius: 100%;
 
 }
 
 .approve-card h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(28, 28, 28);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: rgb(82, 82, 255);
 }
 
 .approve-card p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: rgb(89, 89, 89);
     font-size: 12px;
@@ -84,10 +90,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
-
+.approve-button:hover{
+    transition: 0.5s;
+   
+    border: 2px solid rgb(80, 80, 255);
+}
 .approve-button p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: black;
     margin-bottom: 5px;

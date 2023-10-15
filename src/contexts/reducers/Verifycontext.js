@@ -51,7 +51,12 @@ const VerifyProvider = ({children}) =>{
 
 
             const response = await axios.post("https://pro-planet-server.onrender.com/approve-verify-req" , bodyParame , axiosconfig );
-            console.log(response.data);
+            if(response.status===200){
+                window.location.reload();
+            }
+            else{
+                alert("Some Error");
+            }
         } catch (error) {
             console.log(error);
         }

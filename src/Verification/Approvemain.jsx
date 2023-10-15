@@ -7,6 +7,8 @@ import "../components/Verifyquestion/Ques.css"
 import axios from 'axios';
 import { VerifyContext } from '../contexts/reducers/Verifycontext';
 import { reponseContext } from '../contexts/Responsecontext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Approvemain = () => {
   const location = useLocation();
@@ -22,7 +24,7 @@ const Approvemain = () => {
               "Accept":"application/json",
               "x-auth-token":token
             }
-            
+             
           }
         const response = await axios.get("https://pro-planet-server.onrender.com/get-specific-user?username="+location.state.userData.username , axiosconfig );
         setUserQuestions(response.data.ques);
@@ -46,6 +48,7 @@ const {ApprovaltoProPlanetverification}= useContext(VerifyContext);
 
   
   return (
+    <>
     <div className="question-main">
         <Usernav/>
         <div className="question-main-content">
@@ -73,13 +76,19 @@ const {ApprovaltoProPlanetverification}= useContext(VerifyContext);
     
           <div className="ques-button">
               <div className="button-one">
+                
                   <p onClick={()=>{
+                    toast.info("Please Wait" , {
+                      theme:"dark"
+                    })
                     ApprovaltoProPlanetverification(location.state.userData._id , curr._id);
-                    alert("its Working")
+                  
                   }}>Approve</p>
               </div>
               <div onClick={()=>{
-                console.log(location.state.userData._id , " " , curr._id);
+                 toast.info("Please Wait" , {
+                  theme:"dark"
+                })
                 declineProplanetreq(location.state.userData._id , curr._id);
               }} className="button-two">
                   <p>Decline</p>
@@ -95,6 +104,10 @@ const {ApprovaltoProPlanetverification}= useContext(VerifyContext);
            <div className="right"></div>
         </div>
     </div>
+    <ToastContainer
+      autoClose={1000}
+      limit={1} />
+    </>
   )
 }
 

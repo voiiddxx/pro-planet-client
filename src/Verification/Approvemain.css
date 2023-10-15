@@ -44,6 +44,14 @@
 
 .mid-upper h1{
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
     margin-left: 15px;
+}
+
+
+.ques-text h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }

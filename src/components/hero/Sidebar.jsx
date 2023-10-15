@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router'
 import { userContext } from '../../contexts/Usercontext'
 import axios from 'axios'
 import Verifymodal from '../Modals/Verify/Verifymodal'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Sidebar = () => {
     
@@ -23,6 +25,11 @@ const Sidebar = () => {
   const [ImageModal, setImageModal] = useState(false);
 
   const handleimage = ()=>{
+    setImageModal(false);
+    toast.info('Profile Updating..🔥', {
+      position: "top-right",
+      theme: "dark",
+      });
     if(imagetoupdate!=null){
       let formdata = new FormData();
       formdata.append("file" , imagetoupdate[0]);
@@ -32,15 +39,20 @@ const Sidebar = () => {
             console.log("Uploading..." ,Math.round( ProgressEvent.loaded/ProgressEvent.total));
           }
       }).then(response=>{
-          console.log(response.data.url);
           updateImage(response.data.url);
-          alert("Image Uploaded");
-          setImageModal(false);
+          toast.success("Updated" , {
+            theme:"colored"
+          });
+          
       });
      }
      else{
-      alert("Please Select Image");
+      toast.info("Please Select Image" , {
+        theme:"colored"
+      });
      }
+     setimagetoupdate(null);
+     
   }
 
 
@@ -131,6 +143,9 @@ const Sidebar = () => {
         {
           VerifyMoadlselect!==false ? <Verifymodal close={closemodal}/> : <div></div>
         }
+         <ToastContainer
+      autoClose={1000}
+      limit={1} />
     </>
   )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import "./adminhome.css"
 import Usernav from '../components/Nav/Usernav'
-import Sidebar from '../components/hero/Sidebar'
 import Adminsidebar from '../components/hero/Adminsidebar'
 import Ranking from '../Ranking/Ranking'
 import Userhomemid from '../components/hero/Userhomemid'

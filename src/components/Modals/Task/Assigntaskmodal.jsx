@@ -4,6 +4,8 @@ import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
 import {  faImage  } from '@fortawesome/free-regular-svg-icons'
 import axios from 'axios'
 import { Taskcontext } from '../../../contexts/Taskcontext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Assigntaskmodal = ({close}) => {
 
@@ -15,8 +17,11 @@ const Assigntaskmodal = ({close}) => {
   const [tasklevel, settasklevel] = useState("easy");
   const handleAssignTask = async()=>{
     close();
-    alert("Uploading Task Plaese Wait");
     if(taskrefImage!=null){
+      toast.info('Task Submitting..🔥', {
+        position: "top-right",
+        theme: "dark",
+        });
       let formdata = new FormData();
       formdata.append("file" , taskrefImage[0]);
       formdata.append("upload_preset" , "qouutdij");
@@ -26,8 +31,10 @@ const Assigntaskmodal = ({close}) => {
           }
       }).then(response=>{
           console.log(response.data.url);
-          alert("Image Uploaded");
           AssingTask(taskTitle , taskDetail , taskGuidlines , response.data.url , tasklevel);
+          toast.success("Task Assigned" , {
+            theme:"dark"
+          })
           
       });
      }
@@ -72,11 +79,16 @@ const Assigntaskmodal = ({close}) => {
         </select>
        </div>
 
-        <div onClick={handleAssignTask}  className="assing-task-button">
+        <div onClick={()=>{
+         handleAssignTask();
+        }}  className="assing-task-button">
           <p>Assign</p>
         </div>
 
     </div>
+    <ToastContainer
+      autoClose={1000}
+      limit={1} />
     </>
   )
 }

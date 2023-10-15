@@ -33,12 +33,12 @@
 .register-right p{
     color: rgb(48, 48, 48);
     font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .register-right h1{
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 25px;
     margin-bottom: 50px;
 }
@@ -62,13 +62,14 @@
 
 
 .submit-button{
+    cursor: pointer;
     height: 45px;
     width: 400px;
     background-color: rgb(41, 102, 41);
     color: white;
     outline: none;
     border: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 500;
     border-radius: 5px;
@@ -78,4 +79,16 @@
     background-color: white;
     color: black;
     transition: 0.4s;
+    border: 1px solid black;
+}
+
+.existing-text p{
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+}
+
+.existing-text p span{
+    color: green;
+    font-weight: 700;
 }

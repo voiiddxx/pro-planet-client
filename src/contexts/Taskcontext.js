@@ -34,7 +34,6 @@ const TaskProvider = ({children})=>{
               }
             const response = await axios.post("https://pro-planet-server.onrender.com/assign-task" , BodyParameter , axiosconfig );
             console.log(response.data);
-            
             alert("task Assigned");
         } catch (error) {
             console.log(error);

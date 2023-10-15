@@ -3,18 +3,27 @@ import "./Register.css"
 import earthimage from "./earth.png"
 import { authContext } from '../contexts/Authcontext'
 import { useNavigate } from 'react-router'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
   const navigate = useNavigate();
   const {Register} = useContext(authContext);
-  
+   
   const handleSubmit =async (e)=>{
+    toast.info('Registering Your Account 🔥', {
+      position: "top-right",
+      theme: "dark",
+      });
     e.preventDefault();
     const data = await Register(username , email , password);
     if(data === 200){
       navigate("/Login");
     }
     else{
-      alert("Please Try With Another email address or username");
+      toast.error('Invalid Credentials', {
+        theme: "colored",
+        });
+      
     }
     
 
@@ -24,6 +33,7 @@ const Register = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   return (
+    <>
     <div className="register-main">
         <div className="register-left">
           <img src={earthimage} alt="greencityimage" />
@@ -48,10 +58,19 @@ const Register = () => {
              />
     <p></p>
             <input className='submit-button' type="submit" value="Get Started" onClick={handleSubmit} />
+
+            <div onClick={()=>{
+              navigate("/Login")
+            }} className="existing-text">
+              <p>Already have an account? <span>Login</span> </p>
+            </div>
             
           </form>
+
         </div>
     </div>
+    <ToastContainer />
+    </>
   )
 }
 

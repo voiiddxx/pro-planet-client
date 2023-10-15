@@ -4,7 +4,8 @@ import Usernav from '../components/Nav/Usernav'
 import Adminsidebar from '../components/hero/Adminsidebar'
 import { reponseContext } from '../contexts/Responsecontext'
 import Ranking from '../Ranking/Ranking'
-import { resolvePath } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Approvetask = () => {
 
@@ -46,12 +47,20 @@ const Approvetask = () => {
     
                             <div className="approve-admin-button">
                                 <div onClick={()=>{
-                                    ApproveResponse(curr.user._id , curr.task.task_level , curr._id);
+                                    toast.info("Please Wait..🍀" , {
+                                        theme:"dark"
+                                    });
+                                 ApproveResponse(curr.user._id , curr.task.task_level , curr._id);
+                                 
                                 }} className="ap-button">
                                     <p>Approve</p>
                                 </div>
                                 <div onClick={()=>{
-                                    declineWeeklyResponse(curr._id);
+                                    toast.info("Please Wait..🍀" , {
+                                        theme:"dark"
+                                    });
+                                   declineWeeklyResponse(curr._id);
+                                    
                                 }} className="ap-button-reject">
                                     <p>Reject</p>
                                 </div>
@@ -70,6 +79,9 @@ const Approvetask = () => {
             </div>
         </div>
     </div>
+    <ToastContainer
+      autoClose={1000}
+      limit={1} />
     </>
   )
 }

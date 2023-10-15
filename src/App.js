@@ -12,10 +12,12 @@ import Task from './Tasks/Task'
 import Approvetask from './Tasks/Approvetask'
 import Profile from './Profile/Profile'
 import Otheruser from './Profile/Otheruser'
-
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const App = () => {
   return (
+    <SkeletonTheme baseColor="#8f8f8f" highlightColor="#ececec">
     <Router>
       <Routes>
         <Route path='/' element={<Start/>}/>
@@ -32,6 +34,7 @@ const App = () => {
         <Route path='/Otheruser' element={<Otheruser/>}/>
       </Routes>
     </Router>
+    </SkeletonTheme>
   )
 }
 

@@ -18,7 +18,7 @@
 
 .hero-text h1{
 font-family: 'Poppins', sans-serif;
-    font-size: 55px;
+    font-size : 3.5rem;
 }
 
 .hero-text span{
@@ -34,7 +34,7 @@ font-family: 'Poppins', sans-serif;
 }
 
 .hero-image img{
-    height: 700px;
+    height: 45rem;
     width: auto;
 }
 .button{
@@ -46,18 +46,47 @@ font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     
 }
 
 .button p{
+    font-size: 14px;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight:500 ;
 
 }
 
+.button:hover{
+    background-color: rgb(30, 30, 30);
+    color: white;
+    transition: 0.5s;
+    border: 1px solid white;
+}
+
 .hero-text h2{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: rgb(39, 39, 39);
+}
+
+.loading{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.loading img{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.loading p{
+    font-size: 20px;
+    font-weight: 500;
 }

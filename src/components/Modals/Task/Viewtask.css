@@ -40,7 +40,8 @@ top: 0;
 
 .task-right-view h1{
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     font-size: 20px;
 }
 
@@ -49,7 +50,7 @@ top: 0;
 }
 
 .task-right-view p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     margin-top: 5px;
 
@@ -57,21 +58,23 @@ top: 0;
 
 .task-right-view h2{
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     font-size: 16px;
     color: blue;
 }
 
 .task-image-refrence{
     height: 350px;
-    width: 350px;
+    width: 500px;
     margin-top: 20px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 15px;
 }
 .task-right-view h3{
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     color: rgb(41, 41, 255);
 }
 
@@ -114,7 +117,7 @@ top: 0;
 .uplod p{
     color: white;
     margin-top: 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     
 }
 

@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import "./verifymodal.css"
 import axios from "axios";
 import { authContext } from '../../../contexts/Authcontext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Verifymodal = ({close}) => {
@@ -12,8 +14,13 @@ const Verifymodal = ({close}) => {
 
     //=====UPLOADING IMAGE ON CLOUDINARY AND GETTING THE IMAGE URL====//
     const handleImage = ()=>{
-        console.log(Image[0]);
-        let formdata = new FormData();
+
+        if(Image!=null){
+            toast.info("Please Wait..💡" , {
+                theme:"dark"
+            });
+
+            let formdata = new FormData();
         formdata.append("file" , Image[0]);
         formdata.append("upload_preset" , "qouutdij");
 
@@ -26,9 +33,16 @@ const Verifymodal = ({close}) => {
         }).then(response=>{
             console.log(response.data.url);
             proPlanetverification(question , response.data.url);
-            alert("Image Uploaded");
+            toast.success("Sent For Approval" , {
+                theme:"dark"
+            })
 
         })
+        } else{
+            toast.error("Please Select Image" , {
+                theme:"dark"
+            })
+        }
         
     }
 
@@ -61,7 +75,7 @@ const Verifymodal = ({close}) => {
                 <input className='ques1' type="file" hidden onChange={(e)=>{
                     setImage(e.target.files);
                     setquestion("Solar Avaibility");
-                    alert("Image Selected");
+                
                 }} />
                 <h2>💡Step I</h2>
                 <h3>Any Renewable/Solay Energy</h3>
@@ -85,7 +99,7 @@ const Verifymodal = ({close}) => {
                     setImage(e.target.files);
                     setquestion("Green House")
                     
-                    alert("Image Selected");
+                
                 }} />
                 <h2>💡Step II</h2>
                 <h3>Green House</h3>
@@ -108,7 +122,7 @@ const Verifymodal = ({close}) => {
                 <input className='ques3' type="file" hidden onChange={(e)=>{
                     setImage(e.target.files);
                     setquestion("Electric Vehicle Avaibility")
-                    alert("Image Selected");
+                
                 }} />
                 <h2>💡Step III</h2>
                 <h3>Electric Vehicle</h3>
@@ -128,7 +142,7 @@ const Verifymodal = ({close}) => {
                     setImage(e.target.files);
                     setquestion("Garbage Sepreate Collector");
                     
-                    alert("Image Selected");
+                
                 }} />
                 <h2>💡Step IV</h2>
                 <h3>Garbage Collection</h3>
@@ -146,7 +160,7 @@ const Verifymodal = ({close}) => {
                 <input type="file" className='ques5' hidden onChange={(e)=>{
                     setImage(e.target.files);
                     setquestion("Eco Friendly Activity");                    
-                    alert("Image Selected");
+                
                 }} />
                 <h2>💡Step V</h2>
                 <h3>Eco Friendly</h3>
@@ -162,6 +176,9 @@ const Verifymodal = ({close}) => {
 
            
         </div>
+        <ToastContainer
+      autoClose={1000}
+      limit={1} />
     </>
   )
 }

@@ -16,7 +16,6 @@ const Otheruser = () => {
     } , []);
 
     const {otheruser , otherpost} = useContext(userContext);
-    console.log("this is other user posts" , otherpost);
 
 
     return (

@@ -6,6 +6,8 @@ import { faImage  } from '@fortawesome/free-regular-svg-icons'
 import { Taskcontext } from '../../../contexts/Taskcontext'
 import { authContext } from '../../../contexts/Authcontext'
 import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Viewtask = ( {close , tasklevel}) => {
     
@@ -23,8 +25,13 @@ const Viewtask = ( {close , tasklevel}) => {
     const SubmitForm = async ()=>{
         close();
         try {
+
             if(ResponseImage!=null){
-                alert(ResponseImage);
+                toast.info('Task Submitting..🔥', {
+                    position: "top-right",
+                    theme: "dark",
+                    });
+
                 let formdata = new FormData();
                 formdata.append("file" , ResponseImage[0]);
                 formdata.append("upload_preset" , "qouutdij");
@@ -35,13 +42,18 @@ const Viewtask = ( {close , tasklevel}) => {
                 }).then(response=>{
                     console.log(response.data.url);
                     submitTaskreponse(user, task , response.data.url , responseDetail);
+                    toast.success("Task Submitted" , {
+                        theme:"dark"
+                    });
 
-
-                    alert("Task Submitted");
+                    setResponseImage(null);
                 });
                }
                else{
-                alert("Please Select Image");
+                toast.error("Please Select Image" , {
+                    theme:"dark"
+                });
+
                }
         } catch (error) {
             console.log(error);
@@ -72,7 +84,9 @@ const Viewtask = ( {close , tasklevel}) => {
                             document.querySelector(".responseimage").click();
                         }} className="uplod">
                         <FontAwesomeIcon icon={faImage} size='2xl' color='white' />
-                        <p>Upload Image For Task Submission</p>
+                        {
+                            ResponseImage!=null ? <p>Image Selected 📸</p> :<p>Upload Image For Task Submission</p>
+                        }
                         </div>
                     </div>
 
@@ -86,6 +100,9 @@ const Viewtask = ( {close , tasklevel}) => {
                 </div>
             </div>
         </div>
+        <ToastContainer
+      autoClose={1000}
+      limit={1} />
     
     </>
   )

@@ -51,7 +51,12 @@ const ResponseProvider = ({children})=>{
               }
 
               const response = await axios.post("https://pro-planet-server.onrender.com/approve-weekly-task" , reponseBodyparamter , axiosconfig);
-              console.log(response.data);
+              if(response.status===200){
+                window.location.reload();
+              }
+              else{
+                alert("Some Error")
+              }
 
         } catch (error) {
             console.log(error);
@@ -75,9 +80,9 @@ const ResponseProvider = ({children})=>{
 
               const response = await axios.post("https://pro-planet-server.onrender.com/decline-req" , bodyPara , axiosconfig);
               if(response.status===200){
-                alert("Task Declined")
-              } else{
-                alert("Some Error Occured");
+                window.location.reload();
+              }else{
+                alert("Some Error")
               }
             
         } catch (error) {
@@ -104,10 +109,11 @@ const ResponseProvider = ({children})=>{
 
               const response = await axios.post("https://pro-planet-server.onrender.com/decline-pro-planet-req" , bodyPara , axiosconfig);
               if(response.status===200){
-                alert("Workerd Fine");
-              }else{
-                alert("Some Error occured");
-              }
+                window.location.reload();
+            }
+            else{
+                alert("Some Error");
+            }
       } catch (error) {
         console.log(error);
       }

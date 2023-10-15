@@ -3,12 +3,11 @@ import "./Userhomemid.css"
 import Post from '../Post/Post'
 import Verifymodal from '../Modals/Verify/Verifymodal';
 import { userContext } from '../../contexts/Usercontext';
+import Postskeleton from '../Allskeleton/Postskeleton';
 
 const Userhomemid = () => {
 
   const {isLoading , GettingallPost , posts} = useContext(userContext);
-  console.log(posts);
-
 
   useEffect(()=>{
     GettingallPost();
@@ -30,7 +29,8 @@ const Userhomemid = () => {
         <div className="extra"></div>
     <div className="post-scroll">
     {
-      isLoading ? <p>Posts Are Loading</p> : posts.map((curr,index)=>{
+      isLoading ? <Postskeleton/>
+       : posts.map((curr,index)=>{
         return <Post {...curr}  key={index} />
       })
     }

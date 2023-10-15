@@ -3,25 +3,36 @@ import "./Register.css"
 import earthimage from "./earth.png"
 import { authContext } from '../contexts/Authcontext'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const navigate = useNavigate();
     const {login} = useContext(authContext);
 
     const handleLogin =  async(e)=>{
+      toast.info('Please Wait🔥', {
+        position: "top-right",
+        theme: "dark",
+        });
         e.preventDefault();
        const data = await login(username , password);
+       
        if(data === 200){
-        navigate("/Home")
-       }
+        navigate("/Home");
+             }
        else{
-        alert("There is some problem")
+        toast.error('Invalid Credentials', {
+          theme: "colored",
+          });
        }
     }
   
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
     return (
+      <>
       <div className="register-main">
           <div className="register-left">
             <img src={earthimage} alt="greencityimage" />
@@ -43,10 +54,19 @@ const Login = () => {
                />
       <p></p>
               <input className='submit-button' type="submit" value="Get Started" onClick={handleLogin} />
+              <div onClick={()=>{
+              navigate("/Register")
+            }} className="existing-text">
+              <p>Don't have an account <span>Create Now</span> </p>
+            </div>
               
             </form>
           </div>
       </div>
+      <ToastContainer
+      autoClose={1000}
+      limit={1} />
+      </>
     )
 }
 

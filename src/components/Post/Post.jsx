@@ -6,6 +6,8 @@ import {} from '@fortawesome/free-solid-svg-icons'
 import { impressionContext } from '../../contexts/impressioncontext'
 import Comment from '../Modals/Comment/Comment'
 import { useNavigate } from 'react-router'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Post = (curr) => {
     const navigate = useNavigate();

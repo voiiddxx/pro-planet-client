@@ -30,12 +30,20 @@
 
 
 .ush-left-first img{
+    cursor: pointer;
     height: 160px;
     width: 280px;
     margin-top: 10px;
     border-radius: 10px;
     object-fit: cover;
 }
+
+.ush-left-first img:hover{
+    background-color: black;
+    opacity: 50%;
+    transition: 0.5s;
+}
+
 
 
 .ush-left-first p{

@@ -59,7 +59,6 @@ const AuthProvider = ({children})=>{
             }
             const response = await axios.post("https://pro-planet-server.onrender.com/login",bodyPara , axiosheader );
             localStorage.setItem("x-auth-token" , response.data.token);
-            console.log(response.data);
             return response.status;
             
         } catch (error) {

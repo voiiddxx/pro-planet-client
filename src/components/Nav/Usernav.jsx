@@ -28,9 +28,6 @@ const navigate = useNavigate();
         setOpenAddpostModal(true);
       }} icon={faSquarePlus} size='lg' color='#212121;' />
       </div>
-      <div className="nav-button">
-      <FontAwesomeIcon icon={faTree} size='lg' color='#212121;' />
-      </div>
       <div onClick={()=>{
          localStorage.removeItem("x-auth-token");
          navigate("/Login");

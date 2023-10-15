@@ -41,9 +41,7 @@ const Approve = () => {
           
         </div>
           </div>
-          <div className="admin-right">
-          
-          </div>
+         
         </div>
     </div>
     </>

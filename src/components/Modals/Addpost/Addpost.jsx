@@ -4,17 +4,22 @@ import { FontAwesomeIcon  } from '@fortawesome/react-fontawesome'
 import {  faImage  } from '@fortawesome/free-regular-svg-icons'
 import axios from 'axios'
 import { userContext } from '../../../contexts/Usercontext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Addpost = ({close}) => {
     const {AddPostNow} = useContext(userContext);
-
     const [Image, setImage] = useState(null);
     const [Caption, setCaption] = useState("");
-    const [UploadImage, setUploadImage] = useState(null);
     const HanldeImage = ()=>{
+        
         close();
        if(Image!=null){
+        toast.info('Post Adding..🔥', {
+            position: "top-right",
+            theme: "dark",
+            });
         let formdata = new FormData();
         formdata.append("file" , Image[0]);
         formdata.append("upload_preset" , "qouutdij");
@@ -24,12 +29,16 @@ const Addpost = ({close}) => {
             }
         }).then(response=>{
             AddPostNow(Caption , response.data.url);
-            
-            alert("Post Added Successfully");
+            toast.success("Post Added" , {
+                theme:"dark"
+              });
+              
         });
        }
        else{
-        alert("Please Select Image");
+        toast.error("Please Select Image" , {
+            theme:"dark"
+                })
        }
 
     }
@@ -61,6 +70,10 @@ const Addpost = ({close}) => {
             </div>
         </div>
     </div>
+    <ToastContainer
+      autoClose={1000}
+      limit={1} />
+    
     </>
   )
 }

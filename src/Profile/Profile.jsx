@@ -10,6 +10,7 @@ const Profile = () => {
   const {user} = useContext(authContext);
   const {userpost} = useContext(userContext);
   console.log("this is ",userpost);
+  console.log(localStorage.getItem("x-auth-token"));
   return (
     <div className="profile">
       <Usernav/>
